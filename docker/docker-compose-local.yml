@@ -12,7 +12,20 @@ services:
                 max-file: "3"
         volumes:
             - "${PWD}/db-data:/var/lib/postgresql/data"
-
+    lubiwarehouse:
+        image: postgres:13-alpine
+        environment:
+            - POSTGRES_USER=airflow
+            - POSTGRES_PASSWORD=airflow
+            - POSTGRES_DB=airflow
+        logging:
+            options:
+                max-size: 10m
+                max-file: "3"
+        volumes:
+            - "${PWD}/lubi-db-data:/var/lib/postgresql/data"
+    fakes3:
+        image: fingershock/fakes3:0.2.4
     local-runner:
         image: amazon/mwaa-local:2.0.2
         restart: always

@@ -5,3 +5,4 @@ dags/*.py
 /.idea
 /logs
 /db-data
+/lubi-db-data
