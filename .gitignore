@@ -2,6 +2,7 @@
 *.workspace
 dags/**/*.pyc
 dags/*.*
+dags/*/*.py
 /.idea
 /logs
 /db-data
